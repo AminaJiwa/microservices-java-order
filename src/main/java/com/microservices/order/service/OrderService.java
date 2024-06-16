@@ -1,12 +1,12 @@
-package com.microservices.service;
+package com.microservices.order.service;
 
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.microservices.model.Order;
 import com.microservices.order.dto.OrderRequest;
-import com.microservices.repository.OrderRepository;
+import com.microservices.order.model.Order;
+import com.microservices.order.repository.OrderRepository;
 
 import lombok.RequiredArgsConstructor;
 
