@@ -1,8 +1,8 @@
-package com.microservices.repository;
+package com.microservices.order.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.microservices.model.Order;
+import com.microservices.order.model.Order;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
