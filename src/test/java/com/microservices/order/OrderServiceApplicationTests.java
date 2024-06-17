@@ -1,17 +1,21 @@
 package com.microservices.order;
 
-import io.restassured.RestAssured;
-import com.microservices.orderservice.stub.InventoryStubs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
-import org.springframework.context.annotation.Import;
 import org.testcontainers.containers.MySQLContainer;
+
+import com.microservices.orderservice.stub.InventoryStubs.InventoryStubs;
+
+import io.restassured.RestAssured;
+
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.hamcrest.Matchers;
 
 //@Import(TestcontainersConfiguration.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -54,7 +58,7 @@ class OrderServiceApplicationTests {
 				.statusCode(201)
 				.extract()
 				.body().asString();
-		assertThat(responseBodyString, Matchers.is("Order Placed Successfully"))
+		assertThat(responseBodyString, Matchers.is("Order Placed Successfully"));
 	}
 
 }
